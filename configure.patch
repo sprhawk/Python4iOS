@@ -1,0 +1,12 @@
+diff -r d635e94948a6 configure
+--- a/configure	Tue Jul 16 02:34:19 2013 -0700
++++ b/configure	Wed Jul 17 04:52:21 2013 +0800
+@@ -11476,7 +11476,7 @@
+ 	then
+ 		echo 'Fatal: You must get working getaddrinfo() function.'
+ 		echo '       or you can specify "--disable-ipv6"'.
+-		exit 1
++		#exit 1
+ 	fi
+ else
+ 
