@@ -1,0 +1,37 @@
+--- configure.org	2013-07-18 13:28:42.000000000 +0800
++++ configure	2013-07-18 13:28:48.000000000 +0800
+@@ -3174,6 +3174,9 @@
+ 	*-*-cygwin*)
+ 		ac_sys_system=Cygwin
+ 		;;
++    *-*-darwin*)
++        ac_sys_system=Darwin
++        ;;
+ 	*)
+ 		# for now, limit cross builds to known configurations
+ 		MACHDEP="unknown"
+@@ -3220,6 +3223,15 @@
+ 	*-*-cygwin*)
+ 		_host_cpu=
+ 		;;
++    *-*-darwin*)
++        case "$host_cpu" in
++        arm*)
++            _host_cpu=arm
++            ;;
++        *)
++            _host_cpu=$host_cpu
++        esac
++        ;;
+ 	*)
+ 		# for now, limit cross builds to known configurations
+ 		MACHDEP="unknown"
+@@ -11476,7 +11488,7 @@
+ 	then
+ 		echo 'Fatal: You must get working getaddrinfo() function.'
+ 		echo '       or you can specify "--disable-ipv6"'.
+-		exit 1
++		#exit 1
+ 	fi
+ else
+ 

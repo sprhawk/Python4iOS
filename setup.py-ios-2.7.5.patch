@@ -1,0 +1,47 @@
+--- Python-2.7.5/setup.py	2013-05-12 11:32:54.000000000 +0800
++++ setup.py	2013-07-19 00:44:30.000000000 +0800
+@@ -33,7 +33,8 @@
+ COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig.get_config_var("CONFIG_ARGS"))
+ 
+ # This global variable is used to hold the list of modules to be disabled.
+-disabled_module_list = []
++disabled_module_list = ["_ctypes", ]
++enabled_module_list = []
+ 
+ def add_dir_to_list(dirlist, dir):
+     """Add the directory 'dir' to the list 'dirlist' (at the front) if
+@@ -166,8 +167,13 @@
+         missing = self.detect_modules()
+ 
+         # Remove modules that are present on the disabled list
+-        extensions = [ext for ext in self.extensions
+-                      if ext.name not in disabled_module_list]
++        if 0 == len(enabled_module_list):
++            extensions = [ext for ext in self.extensions
++                        if ext.name not in disabled_module_list]
++        else:
++            extensions = [ext for ext in self.extensions
++                        if ext.name in enabled_module_list]
++
+         # move ctypes to the end, it depends on other modules
+         ext_map = dict((ext.name, i) for i, ext in enumerate(extensions))
+         if "_ctypes" in ext_map:
+@@ -245,10 +251,16 @@
+         # compilers
+         if compiler is not None:
+             (ccshared,cflags) = sysconfig.get_config_vars('CCSHARED','CFLAGS')
+-            args['compiler_so'] = compiler + ' ' + ccshared + ' ' + cflags
++            args['compiler'] = compiler + ' ' + ccshared + ' ' + cflags
++
+         self.compiler.set_executables(**args)
+ 
+-        build_ext.build_extensions(self)
++        objs = []
++        for ext in self.extensions[:]:
++            objs += self.compiler.compile(ext.sources, self.build_lib, ext.define_macros, ext.include_dirs)
++ 
++        self.compiler.create_static_lib(objs, "all_extensions", self.build_lib)
++        #build_ext.build_extensions(self)
+ 
+         longest = max([len(e.name) for e in self.extensions])
+         if self.failed:

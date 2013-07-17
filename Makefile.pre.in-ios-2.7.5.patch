@@ -1,0 +1,19 @@
+--- Python-2.7.5/Makefile.pre.in	2013-05-12 11:32:49.000000000 +0800
++++ Makefile.pre.in	2013-07-18 11:04:44.000000000 +0800
+@@ -227,6 +227,7 @@
+ ##########################################################################
+ # Parser
+ PGEN=		Parser/pgen$(EXE)
++PGEN_FOR_BUILD= $(PGEN)
+ 
+ PSRCS=		\
+ 		Parser/acceler.c \
+@@ -593,7 +594,7 @@
+ $(GRAMMAR_H): $(GRAMMAR_INPUT) $(PGENSRCS)
+ 		@$(MKDIR_P) Include
+ 		$(MAKE) $(PGEN)
+-		$(PGEN) $(GRAMMAR_INPUT) $(GRAMMAR_H) $(GRAMMAR_C)
++		$(PGEN_FOR_BUILD) $(GRAMMAR_INPUT) $(GRAMMAR_H) $(GRAMMAR_C)
+ $(GRAMMAR_C): $(GRAMMAR_H) $(GRAMMAR_INPUT) $(PGENSRCS)
+ 		$(MAKE) $(GRAMMAR_H)
+ 		touch $(GRAMMAR_C)
