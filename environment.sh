@@ -35,7 +35,7 @@ fi
 DEVELOPER="$XCODE/Platforms/$PLATFORM.platform/Developer"
 SDKROOT="$DEVELOPER/SDKs/$PLATFORM$SDKVERSION.sdk"
 export CC="$DEVELOPER/usr/bin/llvm-gcc"
-export CFLAGS+="-arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks"
+export CFLAGS+=" -arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks -g "
 
 export CPPFLAGS=$CFLAGS
 

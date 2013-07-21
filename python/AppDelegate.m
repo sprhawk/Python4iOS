@@ -7,38 +7,20 @@
 //
 
 #import "AppDelegate.h"
-
-#import <Python.h>
-
-static void test_python();
-
-void test_python()
-{
-    NSString * name = [[NSBundle mainBundle] bundleIdentifier];
-    Py_SetProgramName((char *)[name cStringUsingEncoding:NSUTF8StringEncoding]);
-    NSString * rootPath = [[NSBundle mainBundle] resourcePath];
-    Py_SetPythonHome((char *)[rootPath cStringUsingEncoding:NSUTF8StringEncoding]);
-//    char * p = Py_GetPath();
-//    NSLog(@"PythonPath:%s", p);
-    Py_OptimizeFlag = 1;
-    Py_Initialize();
-    PyRun_SimpleString("import sys\n"
-                       "import uuid\n"
-                       "import email\n"
-                       "print('test')");
-    Py_Finalize();
-}
+#import "ScriptViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    test_python();
+    ScriptViewController * s = [[ScriptViewController alloc] init];
+    self.window.rootViewController = s;
     
     return YES;
 }

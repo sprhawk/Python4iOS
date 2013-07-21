@@ -23,14 +23,15 @@ ARCHS=(i386 armv7 armv7s)
 #ARCHS=(i386)
 
 ROOT=`pwd`
+BUILD_PATH="$ROOT/build/python"
 
 # build native machine version of Python
 
-BUILD_PATH=$ROOT/build
-
 if [ -d $BUILD_PATH ]; then
     echo "Cleaning build directory ..."
-    rm -rf build/*
+    rm -rf "$BUILD_PATH/*"
+else
+    mkdir -p "$BUILD_PATH"
 fi
 
 # Due to modifications to multiple files in Python dir, we need a clean source base
@@ -54,12 +55,12 @@ if [ 0 != $? ]; then
     echo "Making native error, exiting ..."
     exit 1
 fi
-cp Parser/pgen $BUILD_PATH/MacOSX/bin
+cp Parser/pgen $BUILD_PATH/macosx/bin
 make clean
 cd $ROOT
 
-PYTHON_FOR_BUILD=$BUILD_PATH/MacOSX/bin/python
-PGEN_FOR_BUILD=$BUILD_PATH/MacOSX/bin/pgen
+PYTHON_FOR_BUILD=$BUILD_PATH/macosx/bin/python
+PGEN_FOR_BUILD=$BUILD_PATH/macosx/bin/pgen
 
 ####################################################################
 echo "patching configure and Makefile ..."
@@ -71,6 +72,7 @@ patch -Np0 <../$MAKEFILE_PRE_IN_PATCH
 patch -Np0 <../$CONFIGURE_PATCH
 #hack: 1. to add a enabled_module_list (not used at the moment)
 #      2. to work around to build static libaries of modules
+#      3. to eliminate duplicated symbols (math.o and timemodule.o)
 patch -Np0 <../$SETUP_PY_PATCH
 
 #hack: to remove ctypes support
@@ -138,16 +140,11 @@ done
 echo "Packaging ..."
 cd $BUILD_PATH
 
-mkdir -p universal/{lib,include}
+mkdir -p universal/{lib,include,modules}
 LIBPYTHON_FILES=""
-EXTENSIONS_FILES=""
 for ARCH in ${ARCHS[@]} 
 do
    LIBPYTHON_FILES+="$ARCH/lib/libpython$PYTHON_MAJOR_VER.a "
-    # because building of static library is just a work around, the path for the 
-    # lib is not very proper. I don't want to make more modifications, so just 
-    # leave as it.
-   EXTENSIONS_FILES+="$ARCH/lib/python$PYTHON_MAJOR_VER/lib-dynload/liball_extensions.a "
 done
 
 echo "Combing multi-arch libpython$PYTHON_MAJOR_VER.a ..."
@@ -159,22 +156,45 @@ if [ 0 != $? ]; then
     exit 1
 fi
 
-echo "Combing multi-arch liball_extensions2.7.a ..."
-lipo $EXTENSIONS_FILES -create -output universal/liball_extensions$PYTHON_MAJOR_VER.a 
+echo "Combing multi-arch modules  ..."
+MODULE_H="universal/modules/pythonmodules.h"
+echo "#include <Python.h>\n" > $MODULE_H
 
-if [ 0 != $? ]; then
-    echo "Create universal lib error, exiting ..."
-    cd "$ROOT"
-    exit 1
-fi
+for a in ${ARCHS[0]}/lib/python$PYTHON_MAJOR_VER/lib-dynload/*.a
+do
+    a="`basename ${a}`"
+    if [[ "$a" =~ lib(.+)module.a ]]; then
+        echo "adding init${BASH_REMATCH[1]}() definition into header"
+        echo "extern PyMODINIT_FUNC init${BASH_REMATCH[1]}(void);\n" >> $MODULE_H
+    fi
+    EXTENSIONS_FILES=""
+    for ARCH in ${ARCHS[@]} 
+    do
+        # because building of static library is just a work around, the path 
+        #for the lib is not very proper. I don't want to make more modifications, 
+        # so just leave as it.
+       EXTENSIONS_FILES+=" $ARCH/lib/python$PYTHON_MAJOR_VER/lib-dynload/$a "
+    done
+    lipo $EXTENSIONS_FILES -create -output "universal/modules/$a"
+    
+    if [ 0 != $? ]; then
+        echo "Create universal lib error, exiting ..."
+        cd "$ROOT"
+        exit 1
+    fi
+done
 
-ARCH=${ARCHS[0]}
-echo "Copying lib files ..."
-cp -r $ARCH/lib/python$PYTHON_MAJOR_VER universal/lib/
-cp -r $ARCH/include/python$PYTHON_MAJOR_VER universal/include/
-find universal -iname "*.pyc" -exec rm -f {} \;
-find universal -iname "*.py" -exec rm -f {} \;
-rm -rf universal/lib/python$PYTHON_MAJOR_VER/lib-dynload
+#ARCH=${ARCHS[0]}
+#echo "Copying lib files ..."
+#cp -v -r $ARCH/lib/python$PYTHON_MAJOR_VER universal/lib/
+#echo "Copying include headers ..."
+#cp -r $ARCH/include/python$PYTHON_MAJOR_VER universal/include/
+#echo "Removing .pyc files .."
+#find universal -iname "*.pyc" -exec rm -f {} \;
+#echo "Removing .py files .."
+#find universal -iname "*.py" -exec rm -f {} \;
+#echo "Removing lib-dynload ..."
+#rm -rf universal/lib/python$PYTHON_MAJOR_VER/lib-dynload
 
 cd $ROOT
 echo "Done."
