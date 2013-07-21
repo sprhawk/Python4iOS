@@ -7,8 +7,6 @@
 # build python 2.7.5 for iOS
 #
 
-SDKVERSION=6.1
-IPHONEOS_MIN_VERSION=5.0
 PYTHON_MAJOR_VER="2.7"
 PYTHONVER="2.7.5"
 PYTHONDIR="Python-$PYTHONVER"
@@ -26,19 +24,13 @@ ARCHS=(i386 armv7 armv7s)
 
 ROOT=`pwd`
 
-XCODE=`xcode-select -print-path`
-
-if [ ! -d "$XCODE" ]; then
-    echo "The Developer tools at $XCODE is not found"
-    exit 1
-fi
 # build native machine version of Python
 
 BUILD_PATH=$ROOT/build
 
 if [ -d $BUILD_PATH ]; then
     echo "Cleaning build directory ..."
-    rm -rf build
+    rm -rf build/*
 fi
 
 # Due to modifications to multiple files in Python dir, we need a clean source base
@@ -107,50 +99,8 @@ do
     echo "building arch: $ARCH ..."
     echo ""
     
-    unset CC
-    unset CFLAGS
-    unset CPP
-    unset CPPFLAGS
-    unset LD
-    unset LDFLAGS
-    unset AR
-    
-    if [ "$ARCH" == "i386" ]; then
-        PLATFORM="iPhoneSimulator"
-    else
-        PLATFORM="iPhoneOS"
-        CFLAGS="-mthumb "
-    fi
-    
-    # adding -miphoneos-version-min to surpress compilation errors
-    DEVELOPER="$XCODE/Platforms/$PLATFORM.platform/Developer"
-    SDKROOT="$DEVELOPER/SDKs/$PLATFORM$SDKVERSION.sdk"
-    export CC="$DEVELOPER/usr/bin/llvm-gcc"
-    export CFLAGS+="-arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks"
-    
-    export CPPFLAGS=$CFLAGS
-    
-    export CXX="$DEVELOPER/usr/bin/llvm-g++"
-    export CXXFLAGS=$CPPFLAGS
-    
-    export LD="$DEVELOPER/usr/bin/ld"
-    export LDFLAGS="-arch $ARCH -L$SDKROOT/usr/lib -miphoneos-version-min=$IPHONEOS_MIN_VERSION -F$SDKROOT/System/Library/Frameworks -L$SDKROOT/usr/lib/system"
-    
-    export AR="$DEVELOPER/usr/bin/ar"
+    source ./environment.sh
 
-    PYINSTDIR="--prefix=$BUILD_PATH/$ARCH"
-    # due to some bug of configure script, you must remove a "exit 1" when testing availablity of getaddrinfo 
-    #BUILD_TARGET="`$CC -arch $ARCH -v 2>&1| sed -nE 's/Target: (.+)/\1/p'`"
-    BUILD_TARGET="$ARCH-apple-darwin"
-    BUILD="--build=$BUILD_TARGET"
-    
-    HOST_PLATFORM="`$CC -v 2>&1 | sed -nE 's/Target: (.+)/\1/p'`"
-    HOST="--host=$HOST_PLATFORM"
-    
-    TARGET="--target $BUILD_TARGET"
-    
-    export _PYTHON_HOST_PLATFORM="$HOST_PLATFORM"
-    
     cd "$ROOT/$PYTHONDIR"
     PYTHON_FOR_BUILD="$PYTHON_FOR_BUILD" PGEN_FOR_BUILD="$PGEN_FOR_BUILD" ./configure $BUILD $HOST $TARGET $PYINSTDIR $PYFEATURES $OPTIONAL 
     
