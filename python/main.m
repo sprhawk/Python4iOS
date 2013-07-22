@@ -16,6 +16,7 @@
 #import "zope_interface.h"
 
 void init_python();
+void unittest_python();
 
 void init_python()
 {
@@ -29,6 +30,10 @@ void init_python()
 //                       "del sys.path[0]\n"
 //                       "sys.path.append('')\n");
 //    initselect(); //unsupported on iOS ?
+    init_collections();
+    inititertools();
+    initoperator();
+    
     init_struct();
     init_io();
     init_functools();
@@ -39,11 +44,18 @@ void init_python()
     init_zope_interface_coptimizations();
 }
 
+void unittest_python()
+{
+    init_testcapi();//for unit_test
+    PyRun_SimpleString("from test.test___all__ import test_main as t\n"
+                       "t()");
+}
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
         init_python();
+        unittest_python();
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

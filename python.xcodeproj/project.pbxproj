@@ -74,6 +74,10 @@
 		4369FB0C179C5AF2008A960D /* lib_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB0B179C5AF2008A960D /* lib_math.a */; };
 		4369FB18179C5D16008A960D /* lib_functoolsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB17179C5D16008A960D /* lib_functoolsmodule.a */; };
 		4369FB1C179C6BD4008A960D /* lib_struct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB1B179C6BD4008A960D /* lib_struct.a */; };
+		43CEB572179D11F400504356 /* lib_collectionsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB571179D11F400504356 /* lib_collectionsmodule.a */; };
+		43CEB574179D135C00504356 /* liboperator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB573179D135C00504356 /* liboperator.a */; };
+		43CEB576179D17AF00504356 /* libitertoolsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB575179D17AF00504356 /* libitertoolsmodule.a */; };
+		43CEB578179D193C00504356 /* lib_testcapimodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB577179D193C00504356 /* lib_testcapimodule.a */; };
 		43D101FA179BE8C90090BA35 /* ScriptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D101F8179BE8C90090BA35 /* ScriptViewController.m */; };
 		43D101FB179BE8C90090BA35 /* ScriptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D101F9179BE8C90090BA35 /* ScriptViewController.xib */; };
 		43D1025F179BF4230090BA35 /* libpython2.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1025B179BF4230090BA35 /* libpython2.7.a */; };
@@ -157,6 +161,10 @@
 		4369FB0B179C5AF2008A960D /* lib_math.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_math.a; path = pythonlib/modules/lib_math.a; sourceTree = "<group>"; };
 		4369FB17179C5D16008A960D /* lib_functoolsmodule.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_functoolsmodule.a; path = pythonlib/modules/lib_functoolsmodule.a; sourceTree = "<group>"; };
 		4369FB1B179C6BD4008A960D /* lib_struct.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_struct.a; path = pythonlib/modules/lib_struct.a; sourceTree = "<group>"; };
+		43CEB571179D11F400504356 /* lib_collectionsmodule.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_collectionsmodule.a; path = pythonlib/modules/lib_collectionsmodule.a; sourceTree = "<group>"; };
+		43CEB573179D135C00504356 /* liboperator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liboperator.a; path = pythonlib/modules/liboperator.a; sourceTree = "<group>"; };
+		43CEB575179D17AF00504356 /* libitertoolsmodule.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libitertoolsmodule.a; path = pythonlib/modules/libitertoolsmodule.a; sourceTree = "<group>"; };
+		43CEB577179D193C00504356 /* lib_testcapimodule.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_testcapimodule.a; path = pythonlib/modules/lib_testcapimodule.a; sourceTree = "<group>"; };
 		43D101F7179BE8C90090BA35 /* ScriptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptViewController.h; sourceTree = "<group>"; };
 		43D101F8179BE8C90090BA35 /* ScriptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptViewController.m; sourceTree = "<group>"; };
 		43D101F9179BE8C90090BA35 /* ScriptViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptViewController.xib; sourceTree = "<group>"; };
@@ -327,6 +335,10 @@
 				4369FB0C179C5AF2008A960D /* lib_math.a in Frameworks */,
 				4369FB18179C5D16008A960D /* lib_functoolsmodule.a in Frameworks */,
 				4369FB1C179C6BD4008A960D /* lib_struct.a in Frameworks */,
+				43CEB572179D11F400504356 /* lib_collectionsmodule.a in Frameworks */,
+				43CEB574179D135C00504356 /* liboperator.a in Frameworks */,
+				43CEB576179D17AF00504356 /* libitertoolsmodule.a in Frameworks */,
+				43CEB578179D193C00504356 /* lib_testcapimodule.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +427,10 @@
 		4369FAF2179C5805008A960D /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				43CEB577179D193C00504356 /* lib_testcapimodule.a */,
+				43CEB575179D17AF00504356 /* libitertoolsmodule.a */,
+				43CEB573179D135C00504356 /* liboperator.a */,
+				43CEB571179D11F400504356 /* lib_collectionsmodule.a */,
 				4369FB1B179C6BD4008A960D /* lib_struct.a */,
 				4369FB17179C5D16008A960D /* lib_functoolsmodule.a */,
 				4369FB0B179C5AF2008A960D /* lib_math.a */,
