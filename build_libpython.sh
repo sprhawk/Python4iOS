@@ -15,7 +15,9 @@ CONFIGURE_PATCH="configure-ios-$PYTHONVER.patch"
 SETUP_PY_PATCH="setup.py-ios-$PYTHONVER.patch"
 
 PYFEATURES="--enable-shared=no --enable-profiling=no --enable-ipv6=yes --with-threads"
-OPTIONAL="--with-signal-module --disable-toolbox-glue"
+# according to https://github.com/kivy/kivy-ios/commit/0062353c5812b893d6d4bcc97eb221cd782a298c
+# use --without-pymalloc to suppress "32-bit absolute address out of range " warning
+OPTIONAL="--with-signal-module --disable-toolbox-glue --without-pymalloc"
 
 PYTHON_DISABLED_MODULE_LIST=("_ctypes")
 
