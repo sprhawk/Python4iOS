@@ -18,71 +18,70 @@
 		43233D4E179710D500BBD230 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43233D4D179710D500BBD230 /* Default-568h@2x.png */; };
 		4369FA95179C1305008A960D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FA94179C1305008A960D /* libsqlite3.dylib */; };
 		4369FA97179C2C69008A960D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FA96179C2C68008A960D /* Security.framework */; };
-		4369FAA1179C566B008A960D /* libtimemodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA0179C566B008A960D /* libtimemodule.a */; };
-		4369FAA6179C56CC008A960D /* libselectmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA2179C56CC008A960D /* libselectmodule.a */; };
-		4369FAA7179C56CC008A960D /* libsemaphore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA3179C56CC008A960D /* libsemaphore.a */; };
-		4369FAA8179C56CC008A960D /* libsocket_connection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA4179C56CC008A960D /* libsocket_connection.a */; };
-		4369FAA9179C56CC008A960D /* libsocketmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA5179C56CC008A960D /* libsocketmodule.a */; };
-		4369FACC179C57D0008A960D /* lib_codecs_cn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAA179C57CD008A960D /* lib_codecs_cn.a */; };
-		4369FACD179C57D0008A960D /* lib_codecs_hk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAB179C57CD008A960D /* lib_codecs_hk.a */; };
-		4369FACE179C57D0008A960D /* lib_codecs_iso2022.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAC179C57CD008A960D /* lib_codecs_iso2022.a */; };
-		4369FACF179C57D0008A960D /* lib_codecs_jp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAD179C57CD008A960D /* lib_codecs_jp.a */; };
-		4369FAD0179C57D0008A960D /* lib_codecs_kr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAE179C57CD008A960D /* lib_codecs_kr.a */; };
-		4369FAD1179C57D0008A960D /* lib_codecs_tw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAF179C57CD008A960D /* lib_codecs_tw.a */; };
-		4369FAD2179C57D0008A960D /* lib_csv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB0179C57CD008A960D /* lib_csv.a */; };
-		4369FAD3179C57D0008A960D /* lib_heapqmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB1179C57CE008A960D /* lib_heapqmodule.a */; };
-		4369FAD4179C57D0008A960D /* lib_hotshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB2179C57CE008A960D /* lib_hotshot.a */; };
-		4369FAD5179C57D0008A960D /* lib_iomodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB3179C57CE008A960D /* lib_iomodule.a */; };
-		4369FAD6179C57D0008A960D /* lib_json.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB4179C57CE008A960D /* lib_json.a */; };
-		4369FAD7179C57D0008A960D /* lib_localemodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB5179C57CE008A960D /* lib_localemodule.a */; };
-		4369FAD8179C57D0008A960D /* lib_randommodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB6179C57CE008A960D /* lib_randommodule.a */; };
-		4369FAD9179C57D0008A960D /* lib_struct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB7179C57CE008A960D /* lib_struct.a */; };
-		4369FADA179C57D0008A960D /* libarraymodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB8179C57CE008A960D /* libarraymodule.a */; };
-		4369FADB179C57D0008A960D /* libcmathmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB9179C57CE008A960D /* libcmathmodule.a */; };
-		4369FADC179C57D0008A960D /* libconnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABA179C57CE008A960D /* libconnection.a */; };
-		4369FADD179C57D0008A960D /* libcPickle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABB179C57CE008A960D /* libcPickle.a */; };
-		4369FADE179C57D0008A960D /* libcStringIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABC179C57CF008A960D /* libcStringIO.a */; };
-		4369FADF179C57D0008A960D /* libdatetimemodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABD179C57CF008A960D /* libdatetimemodule.a */; };
-		4369FAE0179C57D0008A960D /* libmathmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABE179C57CF008A960D /* libmathmodule.a */; };
-		4369FAE1179C57D0008A960D /* libmd5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABF179C57CF008A960D /* libmd5.a */; };
-		4369FAE2179C57D0008A960D /* libmd5module.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC0179C57CF008A960D /* libmd5module.a */; };
-		4369FAE3179C57D0008A960D /* libmultiprocessing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC1179C57CF008A960D /* libmultiprocessing.a */; };
-		4369FAE4179C57D0008A960D /* libparsermodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC2179C57CF008A960D /* libparsermodule.a */; };
-		4369FAE5179C57D0008A960D /* libprepare_protocol.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC3179C57CF008A960D /* libprepare_protocol.a */; };
-		4369FAE6179C57D0008A960D /* libpyexpat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC4179C57CF008A960D /* libpyexpat.a */; };
-		4369FAE7179C57D0008A960D /* librotatingtree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC5179C57CF008A960D /* librotatingtree.a */; };
-		4369FAE8179C57D0008A960D /* libstatement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC6179C57CF008A960D /* libstatement.a */; };
-		4369FAE9179C57D0008A960D /* libunicodedata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC7179C57CF008A960D /* libunicodedata.a */; };
-		4369FAEA179C57D0008A960D /* libutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC8179C57CF008A960D /* libutil.a */; };
-		4369FAEB179C57D0008A960D /* libxmlparse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC9179C57CF008A960D /* libxmlparse.a */; };
-		4369FAEC179C57D0008A960D /* libxmlrole.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FACA179C57CF008A960D /* libxmlrole.a */; };
-		4369FAED179C57D0008A960D /* libxmltok.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FACB179C57D0008A960D /* libxmltok.a */; };
-		4369FAF0179C57F6008A960D /* libiobase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAEE179C57F6008A960D /* libiobase.a */; };
-		4369FAF1179C57F6008A960D /* libmultibytecodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAEF179C57F6008A960D /* libmultibytecodec.a */; };
-		4369FAF4179C582A008A960D /* libbufferedio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF3179C582A008A960D /* libbufferedio.a */; };
-		4369FAF6179C587F008A960D /* libstringio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF5179C587F008A960D /* libstringio.a */; };
-		4369FAF8179C5893008A960D /* libfileio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF7179C5893008A960D /* libfileio.a */; };
-		4369FAFA179C58B1008A960D /* libtextio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF9179C58B1008A960D /* libtextio.a */; };
-		4369FAFC179C58EA008A960D /* lib_bisectmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAFB179C58EA008A960D /* lib_bisectmodule.a */; };
-		4369FAFE179C58F8008A960D /* lib_elementtree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAFD179C58F8008A960D /* lib_elementtree.a */; };
-		4369FB00179C590C008A960D /* libbytesio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAFF179C590C008A960D /* libbytesio.a */; };
-		4369FB02179C5947008A960D /* librow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB01179C5947008A960D /* librow.a */; };
-		4369FB04179C5998008A960D /* libmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB03179C5998008A960D /* libmodule.a */; };
-		4369FB06179C59D2008A960D /* libcursor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB05179C59D2008A960D /* libcursor.a */; };
-		4369FB08179C59E4008A960D /* libcache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB07179C59E4008A960D /* libcache.a */; };
-		4369FB0A179C59F9008A960D /* libmicroprotocols.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB09179C59F9008A960D /* libmicroprotocols.a */; };
-		4369FB0C179C5AF2008A960D /* lib_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB0B179C5AF2008A960D /* lib_math.a */; };
-		4369FB18179C5D16008A960D /* lib_functoolsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB17179C5D16008A960D /* lib_functoolsmodule.a */; };
-		4369FB1C179C6BD4008A960D /* lib_struct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB1B179C6BD4008A960D /* lib_struct.a */; };
-		43CEB572179D11F400504356 /* lib_collectionsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB571179D11F400504356 /* lib_collectionsmodule.a */; };
-		43CEB574179D135C00504356 /* liboperator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB573179D135C00504356 /* liboperator.a */; };
-		43CEB576179D17AF00504356 /* libitertoolsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB575179D17AF00504356 /* libitertoolsmodule.a */; };
-		43CEB578179D193C00504356 /* lib_testcapimodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB577179D193C00504356 /* lib_testcapimodule.a */; };
+		43CEB57F179D8C3200504356 /* libpython2.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1025B179BF4230090BA35 /* libpython2.7.a */; };
+		43CEB580179D8C3C00504356 /* lib_testcapimodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB577179D193C00504356 /* lib_testcapimodule.a */; };
+		43CEB581179D8C3C00504356 /* libitertoolsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB575179D17AF00504356 /* libitertoolsmodule.a */; };
+		43CEB582179D8C3C00504356 /* liboperator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB573179D135C00504356 /* liboperator.a */; };
+		43CEB583179D8C3C00504356 /* lib_collectionsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CEB571179D11F400504356 /* lib_collectionsmodule.a */; };
+		43CEB584179D8C3C00504356 /* lib_struct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB1B179C6BD4008A960D /* lib_struct.a */; };
+		43CEB585179D8C3C00504356 /* lib_functoolsmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB17179C5D16008A960D /* lib_functoolsmodule.a */; };
+		43CEB586179D8C3C00504356 /* lib_math.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB0B179C5AF2008A960D /* lib_math.a */; };
+		43CEB587179D8C4100504356 /* libmicroprotocols.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB09179C59F9008A960D /* libmicroprotocols.a */; };
+		43CEB588179D8C4100504356 /* libcache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB07179C59E4008A960D /* libcache.a */; };
+		43CEB589179D8C4100504356 /* libcursor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB05179C59D2008A960D /* libcursor.a */; };
+		43CEB58A179D8C4100504356 /* libmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB03179C5998008A960D /* libmodule.a */; };
+		43CEB58B179D8C4100504356 /* librow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FB01179C5947008A960D /* librow.a */; };
+		43CEB58C179D8C4600504356 /* libbytesio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAFF179C590C008A960D /* libbytesio.a */; };
+		43CEB58D179D8C4600504356 /* libbufferedio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF3179C582A008A960D /* libbufferedio.a */; };
+		43CEB58E179D8C4600504356 /* lib_iomodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB3179C57CE008A960D /* lib_iomodule.a */; };
+		43CEB58F179D8C4600504356 /* libfileio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF7179C5893008A960D /* libfileio.a */; };
+		43CEB590179D8C4600504356 /* libtextio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF9179C58B1008A960D /* libtextio.a */; };
+		43CEB591179D8C4600504356 /* libstringio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAF5179C587F008A960D /* libstringio.a */; };
+		43CEB592179D8C4D00504356 /* libcStringIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABC179C57CF008A960D /* libcStringIO.a */; };
+		43CEB593179D8C4D00504356 /* lib_elementtree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAFD179C58F8008A960D /* lib_elementtree.a */; };
+		43CEB594179D8C4D00504356 /* lib_bisectmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAFB179C58EA008A960D /* lib_bisectmodule.a */; };
+		43CEB595179D8C4D00504356 /* libiobase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAEE179C57F6008A960D /* libiobase.a */; };
+		43CEB596179D8C4D00504356 /* libmultibytecodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAEF179C57F6008A960D /* libmultibytecodec.a */; };
+		43CEB597179D8C4D00504356 /* libtwisted_ext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1025C179BF4230090BA35 /* libtwisted_ext.a */; };
+		43CEB598179D8C4D00504356 /* libzope_interface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1025D179BF4230090BA35 /* libzope_interface.a */; };
+		43CEB599179D8C4D00504356 /* libtimemodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA0179C566B008A960D /* libtimemodule.a */; };
+		43CEB59A179D8C4D00504356 /* libselectmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA2179C56CC008A960D /* libselectmodule.a */; };
+		43CEB59B179D8C4D00504356 /* libsemaphore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA3179C56CC008A960D /* libsemaphore.a */; };
+		43CEB59C179D8C4D00504356 /* libsocket_connection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA4179C56CC008A960D /* libsocket_connection.a */; };
+		43CEB59D179D8C4D00504356 /* libsocketmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAA5179C56CC008A960D /* libsocketmodule.a */; };
+		43CEB59E179D8C4D00504356 /* lib_codecs_cn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAA179C57CD008A960D /* lib_codecs_cn.a */; };
+		43CEB59F179D8C4D00504356 /* lib_codecs_hk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAB179C57CD008A960D /* lib_codecs_hk.a */; };
+		43CEB5A0179D8C4D00504356 /* lib_codecs_iso2022.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAC179C57CD008A960D /* lib_codecs_iso2022.a */; };
+		43CEB5A1179D8C4D00504356 /* lib_codecs_jp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAD179C57CD008A960D /* lib_codecs_jp.a */; };
+		43CEB5A2179D8C4D00504356 /* lib_codecs_kr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAE179C57CD008A960D /* lib_codecs_kr.a */; };
+		43CEB5A3179D8C4D00504356 /* lib_codecs_tw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAAF179C57CD008A960D /* lib_codecs_tw.a */; };
+		43CEB5A4179D8C4D00504356 /* lib_csv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB0179C57CD008A960D /* lib_csv.a */; };
+		43CEB5A5179D8C4D00504356 /* lib_heapqmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB1179C57CE008A960D /* lib_heapqmodule.a */; };
+		43CEB5A6179D8C4D00504356 /* lib_hotshot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB2179C57CE008A960D /* lib_hotshot.a */; };
+		43CEB5A7179D8C4D00504356 /* lib_json.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB4179C57CE008A960D /* lib_json.a */; };
+		43CEB5A8179D8C4D00504356 /* lib_localemodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB5179C57CE008A960D /* lib_localemodule.a */; };
+		43CEB5A9179D8C4D00504356 /* lib_randommodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB6179C57CE008A960D /* lib_randommodule.a */; };
+		43CEB5AA179D8C4D00504356 /* libarraymodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB8179C57CE008A960D /* libarraymodule.a */; };
+		43CEB5AB179D8C4D00504356 /* libcmathmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAB9179C57CE008A960D /* libcmathmodule.a */; };
+		43CEB5AC179D8C4D00504356 /* libconnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABA179C57CE008A960D /* libconnection.a */; };
+		43CEB5AD179D8C4D00504356 /* libcPickle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABB179C57CE008A960D /* libcPickle.a */; };
+		43CEB5AE179D8C4D00504356 /* libdatetimemodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABD179C57CF008A960D /* libdatetimemodule.a */; };
+		43CEB5AF179D8C4D00504356 /* libmathmodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABE179C57CF008A960D /* libmathmodule.a */; };
+		43CEB5B0179D8C4D00504356 /* libmd5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FABF179C57CF008A960D /* libmd5.a */; };
+		43CEB5B1179D8C4D00504356 /* libmd5module.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC0179C57CF008A960D /* libmd5module.a */; };
+		43CEB5B2179D8C4D00504356 /* libmultiprocessing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC1179C57CF008A960D /* libmultiprocessing.a */; };
+		43CEB5B3179D8C4D00504356 /* libparsermodule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC2179C57CF008A960D /* libparsermodule.a */; };
+		43CEB5B4179D8C4D00504356 /* libprepare_protocol.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC3179C57CF008A960D /* libprepare_protocol.a */; };
+		43CEB5B5179D8C4D00504356 /* libpyexpat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC4179C57CF008A960D /* libpyexpat.a */; };
+		43CEB5B6179D8C4D00504356 /* librotatingtree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC5179C57CF008A960D /* librotatingtree.a */; };
+		43CEB5B7179D8C4D00504356 /* libstatement.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC6179C57CF008A960D /* libstatement.a */; };
+		43CEB5B8179D8C4D00504356 /* libunicodedata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC7179C57CF008A960D /* libunicodedata.a */; };
+		43CEB5B9179D8C4D00504356 /* libutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC8179C57CF008A960D /* libutil.a */; };
+		43CEB5BA179D8C4D00504356 /* libxmlparse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FAC9179C57CF008A960D /* libxmlparse.a */; };
+		43CEB5BB179D8C4D00504356 /* libxmlrole.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FACA179C57CF008A960D /* libxmlrole.a */; };
+		43CEB5BC179D8C4D00504356 /* libxmltok.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369FACB179C57D0008A960D /* libxmltok.a */; };
 		43D101FA179BE8C90090BA35 /* ScriptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D101F8179BE8C90090BA35 /* ScriptViewController.m */; };
 		43D101FB179BE8C90090BA35 /* ScriptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D101F9179BE8C90090BA35 /* ScriptViewController.xib */; };
-		43D1025F179BF4230090BA35 /* libpython2.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1025B179BF4230090BA35 /* libpython2.7.a */; };
-		43D10260179BF4230090BA35 /* libtwisted_ext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1025C179BF4230090BA35 /* libtwisted_ext.a */; };
-		43D10261179BF4230090BA35 /* libzope_interface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1025D179BF4230090BA35 /* libzope_interface.a */; };
 		43D10263179BF42D0090BA35 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 43D10262179BF42D0090BA35 /* lib */; };
 /* End PBXBuildFile section */
 
@@ -276,69 +275,68 @@
 				43233D38179710D500BBD230 /* UIKit.framework in Frameworks */,
 				43233D3A179710D500BBD230 /* Foundation.framework in Frameworks */,
 				43233D3C179710D500BBD230 /* CoreGraphics.framework in Frameworks */,
-				43D1025F179BF4230090BA35 /* libpython2.7.a in Frameworks */,
-				43D10260179BF4230090BA35 /* libtwisted_ext.a in Frameworks */,
-				43D10261179BF4230090BA35 /* libzope_interface.a in Frameworks */,
-				4369FAA1179C566B008A960D /* libtimemodule.a in Frameworks */,
-				4369FAA6179C56CC008A960D /* libselectmodule.a in Frameworks */,
-				4369FAA7179C56CC008A960D /* libsemaphore.a in Frameworks */,
-				4369FAA8179C56CC008A960D /* libsocket_connection.a in Frameworks */,
-				4369FAA9179C56CC008A960D /* libsocketmodule.a in Frameworks */,
-				4369FACC179C57D0008A960D /* lib_codecs_cn.a in Frameworks */,
-				4369FACD179C57D0008A960D /* lib_codecs_hk.a in Frameworks */,
-				4369FACE179C57D0008A960D /* lib_codecs_iso2022.a in Frameworks */,
-				4369FACF179C57D0008A960D /* lib_codecs_jp.a in Frameworks */,
-				4369FAD0179C57D0008A960D /* lib_codecs_kr.a in Frameworks */,
-				4369FAD1179C57D0008A960D /* lib_codecs_tw.a in Frameworks */,
-				4369FAD2179C57D0008A960D /* lib_csv.a in Frameworks */,
-				4369FAD3179C57D0008A960D /* lib_heapqmodule.a in Frameworks */,
-				4369FAD4179C57D0008A960D /* lib_hotshot.a in Frameworks */,
-				4369FAD5179C57D0008A960D /* lib_iomodule.a in Frameworks */,
-				4369FAD6179C57D0008A960D /* lib_json.a in Frameworks */,
-				4369FAD7179C57D0008A960D /* lib_localemodule.a in Frameworks */,
-				4369FAD8179C57D0008A960D /* lib_randommodule.a in Frameworks */,
-				4369FAD9179C57D0008A960D /* lib_struct.a in Frameworks */,
-				4369FADA179C57D0008A960D /* libarraymodule.a in Frameworks */,
-				4369FADB179C57D0008A960D /* libcmathmodule.a in Frameworks */,
-				4369FADC179C57D0008A960D /* libconnection.a in Frameworks */,
-				4369FADD179C57D0008A960D /* libcPickle.a in Frameworks */,
-				4369FADE179C57D0008A960D /* libcStringIO.a in Frameworks */,
-				4369FADF179C57D0008A960D /* libdatetimemodule.a in Frameworks */,
-				4369FAE0179C57D0008A960D /* libmathmodule.a in Frameworks */,
-				4369FAE1179C57D0008A960D /* libmd5.a in Frameworks */,
-				4369FAE2179C57D0008A960D /* libmd5module.a in Frameworks */,
-				4369FAE3179C57D0008A960D /* libmultiprocessing.a in Frameworks */,
-				4369FAE4179C57D0008A960D /* libparsermodule.a in Frameworks */,
-				4369FAE5179C57D0008A960D /* libprepare_protocol.a in Frameworks */,
-				4369FAE6179C57D0008A960D /* libpyexpat.a in Frameworks */,
-				4369FAE7179C57D0008A960D /* librotatingtree.a in Frameworks */,
-				4369FAE8179C57D0008A960D /* libstatement.a in Frameworks */,
-				4369FAE9179C57D0008A960D /* libunicodedata.a in Frameworks */,
-				4369FAEA179C57D0008A960D /* libutil.a in Frameworks */,
-				4369FAEB179C57D0008A960D /* libxmlparse.a in Frameworks */,
-				4369FAEC179C57D0008A960D /* libxmlrole.a in Frameworks */,
-				4369FAED179C57D0008A960D /* libxmltok.a in Frameworks */,
-				4369FAF0179C57F6008A960D /* libiobase.a in Frameworks */,
-				4369FAF1179C57F6008A960D /* libmultibytecodec.a in Frameworks */,
-				4369FAF4179C582A008A960D /* libbufferedio.a in Frameworks */,
-				4369FAF6179C587F008A960D /* libstringio.a in Frameworks */,
-				4369FAF8179C5893008A960D /* libfileio.a in Frameworks */,
-				4369FAFA179C58B1008A960D /* libtextio.a in Frameworks */,
-				4369FAFC179C58EA008A960D /* lib_bisectmodule.a in Frameworks */,
-				4369FAFE179C58F8008A960D /* lib_elementtree.a in Frameworks */,
-				4369FB00179C590C008A960D /* libbytesio.a in Frameworks */,
-				4369FB02179C5947008A960D /* librow.a in Frameworks */,
-				4369FB04179C5998008A960D /* libmodule.a in Frameworks */,
-				4369FB06179C59D2008A960D /* libcursor.a in Frameworks */,
-				4369FB08179C59E4008A960D /* libcache.a in Frameworks */,
-				4369FB0A179C59F9008A960D /* libmicroprotocols.a in Frameworks */,
-				4369FB0C179C5AF2008A960D /* lib_math.a in Frameworks */,
-				4369FB18179C5D16008A960D /* lib_functoolsmodule.a in Frameworks */,
-				4369FB1C179C6BD4008A960D /* lib_struct.a in Frameworks */,
-				43CEB572179D11F400504356 /* lib_collectionsmodule.a in Frameworks */,
-				43CEB574179D135C00504356 /* liboperator.a in Frameworks */,
-				43CEB576179D17AF00504356 /* libitertoolsmodule.a in Frameworks */,
-				43CEB578179D193C00504356 /* lib_testcapimodule.a in Frameworks */,
+				43CEB57F179D8C3200504356 /* libpython2.7.a in Frameworks */,
+				43CEB580179D8C3C00504356 /* lib_testcapimodule.a in Frameworks */,
+				43CEB581179D8C3C00504356 /* libitertoolsmodule.a in Frameworks */,
+				43CEB582179D8C3C00504356 /* liboperator.a in Frameworks */,
+				43CEB583179D8C3C00504356 /* lib_collectionsmodule.a in Frameworks */,
+				43CEB584179D8C3C00504356 /* lib_struct.a in Frameworks */,
+				43CEB585179D8C3C00504356 /* lib_functoolsmodule.a in Frameworks */,
+				43CEB586179D8C3C00504356 /* lib_math.a in Frameworks */,
+				43CEB587179D8C4100504356 /* libmicroprotocols.a in Frameworks */,
+				43CEB588179D8C4100504356 /* libcache.a in Frameworks */,
+				43CEB589179D8C4100504356 /* libcursor.a in Frameworks */,
+				43CEB58A179D8C4100504356 /* libmodule.a in Frameworks */,
+				43CEB58B179D8C4100504356 /* librow.a in Frameworks */,
+				43CEB58C179D8C4600504356 /* libbytesio.a in Frameworks */,
+				43CEB58D179D8C4600504356 /* libbufferedio.a in Frameworks */,
+				43CEB58E179D8C4600504356 /* lib_iomodule.a in Frameworks */,
+				43CEB58F179D8C4600504356 /* libfileio.a in Frameworks */,
+				43CEB590179D8C4600504356 /* libtextio.a in Frameworks */,
+				43CEB591179D8C4600504356 /* libstringio.a in Frameworks */,
+				43CEB592179D8C4D00504356 /* libcStringIO.a in Frameworks */,
+				43CEB593179D8C4D00504356 /* lib_elementtree.a in Frameworks */,
+				43CEB594179D8C4D00504356 /* lib_bisectmodule.a in Frameworks */,
+				43CEB595179D8C4D00504356 /* libiobase.a in Frameworks */,
+				43CEB596179D8C4D00504356 /* libmultibytecodec.a in Frameworks */,
+				43CEB597179D8C4D00504356 /* libtwisted_ext.a in Frameworks */,
+				43CEB598179D8C4D00504356 /* libzope_interface.a in Frameworks */,
+				43CEB599179D8C4D00504356 /* libtimemodule.a in Frameworks */,
+				43CEB59A179D8C4D00504356 /* libselectmodule.a in Frameworks */,
+				43CEB59B179D8C4D00504356 /* libsemaphore.a in Frameworks */,
+				43CEB59C179D8C4D00504356 /* libsocket_connection.a in Frameworks */,
+				43CEB59D179D8C4D00504356 /* libsocketmodule.a in Frameworks */,
+				43CEB59E179D8C4D00504356 /* lib_codecs_cn.a in Frameworks */,
+				43CEB59F179D8C4D00504356 /* lib_codecs_hk.a in Frameworks */,
+				43CEB5A0179D8C4D00504356 /* lib_codecs_iso2022.a in Frameworks */,
+				43CEB5A1179D8C4D00504356 /* lib_codecs_jp.a in Frameworks */,
+				43CEB5A2179D8C4D00504356 /* lib_codecs_kr.a in Frameworks */,
+				43CEB5A3179D8C4D00504356 /* lib_codecs_tw.a in Frameworks */,
+				43CEB5A4179D8C4D00504356 /* lib_csv.a in Frameworks */,
+				43CEB5A5179D8C4D00504356 /* lib_heapqmodule.a in Frameworks */,
+				43CEB5A6179D8C4D00504356 /* lib_hotshot.a in Frameworks */,
+				43CEB5A7179D8C4D00504356 /* lib_json.a in Frameworks */,
+				43CEB5A8179D8C4D00504356 /* lib_localemodule.a in Frameworks */,
+				43CEB5A9179D8C4D00504356 /* lib_randommodule.a in Frameworks */,
+				43CEB5AA179D8C4D00504356 /* libarraymodule.a in Frameworks */,
+				43CEB5AB179D8C4D00504356 /* libcmathmodule.a in Frameworks */,
+				43CEB5AC179D8C4D00504356 /* libconnection.a in Frameworks */,
+				43CEB5AD179D8C4D00504356 /* libcPickle.a in Frameworks */,
+				43CEB5AE179D8C4D00504356 /* libdatetimemodule.a in Frameworks */,
+				43CEB5AF179D8C4D00504356 /* libmathmodule.a in Frameworks */,
+				43CEB5B0179D8C4D00504356 /* libmd5.a in Frameworks */,
+				43CEB5B1179D8C4D00504356 /* libmd5module.a in Frameworks */,
+				43CEB5B2179D8C4D00504356 /* libmultiprocessing.a in Frameworks */,
+				43CEB5B3179D8C4D00504356 /* libparsermodule.a in Frameworks */,
+				43CEB5B4179D8C4D00504356 /* libprepare_protocol.a in Frameworks */,
+				43CEB5B5179D8C4D00504356 /* libpyexpat.a in Frameworks */,
+				43CEB5B6179D8C4D00504356 /* librotatingtree.a in Frameworks */,
+				43CEB5B7179D8C4D00504356 /* libstatement.a in Frameworks */,
+				43CEB5B8179D8C4D00504356 /* libunicodedata.a in Frameworks */,
+				43CEB5B9179D8C4D00504356 /* libutil.a in Frameworks */,
+				43CEB5BA179D8C4D00504356 /* libxmlparse.a in Frameworks */,
+				43CEB5BB179D8C4D00504356 /* libxmlrole.a in Frameworks */,
+				43CEB5BC179D8C4D00504356 /* libxmltok.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

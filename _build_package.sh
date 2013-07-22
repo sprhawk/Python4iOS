@@ -27,5 +27,8 @@ fi
 cd "$PACKAGE_ROOT"
 python setup.py build_py -O2 -d "$BUILD_DIR"
 
+echo "removing .py files ..."
+find "$BUILD_DIR" -name "*.py" -exec rm -f {} \;
+
 cd "$ROOT"
 
