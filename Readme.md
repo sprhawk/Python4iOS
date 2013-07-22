@@ -12,7 +12,12 @@ Usage:
 
 3. Build python for each i386 armv7 armv7s
 
-4. Combine all generated .a into one universal lib, one is libpython2.7.a, the other is liball_extensions.a, which are under build/universal directory. Then the script will clean .py and .pyc files under universal directory, only preserve .pyo lib files.
+4. Combine all core specific architecture .a into one universal lib, libpython2.7.a, which are under build/universal directory. Then the script will clean .py and .pyc files under universal directory, only preserve .pyo lib files.
+    '''
+    All .c files under Modules are combined and archived as separated .a files. There are two reasons, one is that in normal building process, some modules (eg, cmathmodule and mathmodule) share some same code base (eg, the two modules share _math.c), and the all .c files it needs are linked togther into one .so file (that is, cmathmodule.c and _math.c are linked into cmathmodule.so, and mathmodule.c and _math.c are linked into mathmodule.so), the .SOs are loaded dynamically. But due to our static linking, the originally linking process will archive duplicated module (_math.c) multiple times, which will cause "duplicate sympols" error.
+    The other reason is, some modules have own depends (such as sqlite, openssl, etc), if there is a big .a file, when your project has a -all_load linker flag, you will be crazy to satisfy all the libs requirements.
+    The drawbacks to the solution is any time you want to add some support to a module, you will add the module .a file by yourself, it may be tedious work.
+    '''
 
 5. Now, you can copy libpython2.7.a, all include headers, all lib/python2.7/* into your own iOS project, and add header files into your search path, add .a files into your build phrase, depends on your need, add your required modules into your Bundle.
     See $7 for details about c extensions.
