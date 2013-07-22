@@ -20,7 +20,7 @@ OPTIONAL="--with-signal-module --disable-toolbox-glue"
 PYTHON_DISABLED_MODULE_LIST=("_ctypes")
 
 ARCHS=(i386 armv7 armv7s)
-#ARCHS=(i386)
+#ARCHS=(armv7)
 
 ROOT=`pwd`
 BUILD_PATH="$ROOT/build/python"
