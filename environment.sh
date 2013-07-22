@@ -38,7 +38,8 @@ export CC="$DEVELOPER/usr/bin/llvm-gcc"
 # http://developer.apple.com/library/mac/#releasenotes/Darwin/SymbolVariantsRelNotes/index.html
 # sys/cdefs.h
 #
-export CFLAGS+=" -D__DARWIN_ONLY_VERS_1050=1 -D__DARWIN_ONLY_64_BIT_INO_T=1 -D__DARWIN_ONLY_UNIX_CONFORMANCE=1 -g -pipe -arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks -g -Wall "
+#export CFLAGS+=" -D__DARWIN_ONLY_VERS_1050=1 -D__DARWIN_ONLY_64_BIT_INO_T=1 -D__DARWIN_ONLY_UNIX_CONFORMANCE=1 -g -pipe -arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks -g -Wall "
+export CFLAGS+="  -g -pipe -arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks -g -Wall "
 export CPP="$CPP"
 export CPPFLAGS=$CFLAGS
 
