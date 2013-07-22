@@ -56,3 +56,5 @@ Known Issues
 2. Automatically generated initsocket() is wrong, should be init_socket();
 3. Many libs for sqlite module are named incorrectly, eg, sqlitemodule as libmodule.a, etc
 4. Missing init_struct()
+5. All unit tests for Python are included into the lib, but in a production mode, they are not required. Need a option to remove unit test code out of pakcage
+6. Cannot suppress warning of "32-bit absolute address out of range"

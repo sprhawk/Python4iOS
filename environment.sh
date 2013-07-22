@@ -48,6 +48,9 @@ export CXXFLAGS=$CPPFLAGS
 export LD="$DEVELOPER/usr/bin/ld"
 export LDFLAGS="-arch $ARCH -L$SDKROOT/usr/lib -miphoneos-version-min=$IPHONEOS_MIN_VERSION -F$SDKROOT/System/Library/Frameworks -L$SDKROOT/usr/lib/system"
 
+export AS="$DEVELOPER/usr/bin/as"
+export ASFLAGS=" -arch $ARCH "
+
 export AR="$DEVELOPER/usr/bin/ar"
 
 PYINSTDIR="--prefix=$BUILD_PATH/$ARCH"
