@@ -3,6 +3,16 @@ A Python build script (with patches) for iOS
 
 Tested for Python 2.7.5, under Xcode 4.6.3 (iOS SDK 6.1)
 
+Default Modules:
+All standard modules bundled with Python 2.7.5 (Almost, except that the module requirement is not supported under iOS, eg, socketmodule, which uses select it seems not supported under iOS)
+
+Third party modules:
+zope.interface and Twisted ( no RPC/portmap supported )
+
+'''
+before you use any loadable module, you must call its initXXX function to load it by default
+'''
+
 Usage:
 -----
 
