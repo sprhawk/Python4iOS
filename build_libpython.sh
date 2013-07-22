@@ -196,6 +196,9 @@ do
             "liboperator.a")
                 fn="initoperator"        
                 ;;
+            "lib_struct.a")
+                fn="init_struct"
+                ;;
         esac
     fi
     if [ ! -z $fn ]; then
