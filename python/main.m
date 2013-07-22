@@ -33,10 +33,13 @@ void init_python()
     init_collections();
     inititertools();
     initoperator();
-    
+    initarray();
     init_struct();
     init_io();
     init_functools();
+    
+    init_locale();
+    
     inittime();
     init_socket();
     initsendmsg();
