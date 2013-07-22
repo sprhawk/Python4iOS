@@ -12,7 +12,7 @@ SOURCES=("sendmsg.c" "raiser.c")
 BUILD_DIR="$ROOT/build/$LIB_NAME"
 LIB_DIR="$BUILD_DIR/lib"
 PY_DIR="$BUILD_DIR/twisted"
-EXT_LIB_NAME="libt$LIB_NAME_ext.a"
+EXT_LIB_NAME="lib$LIB_NAME.a"
 PYTHON_INCLUDE="$ROOT/build/python/universal/include/python2.7"
 
 source _build_package.sh
