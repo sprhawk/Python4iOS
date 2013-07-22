@@ -25,42 +25,50 @@ ARCHS=(i386 armv7 armv7s)
 ROOT=`pwd`
 BUILD_PATH="$ROOT/build/python"
 
-# build native machine version of Python
-
-if [ -d $BUILD_PATH ]; then
-    echo "Cleaning build directory ..."
-    rm -rf "$BUILD_PATH/*"
-else
-    mkdir -p "$BUILD_PATH"
-fi
-
-# Due to modifications to multiple files in Python dir, we need a clean source base
-if [ -d "$PYTHONDIR" ]; then
-    echo "Cleaning $PYTHONDIR source ..."
-    rm -rf "$PYTHONDIR" 
-fi
-
-if [ ! -f "Python-$PYTHONVER.tar.bz2" ]; then
-    wget -c "http://python.org/ftp/python/$PYTHONVER/Python-$PYTHONVER.tar.bz2"
-fi
-echo "Extracting Python-$PYTHONVER.tar.bz2"
-tar xf "Python-$PYTHONVER.tar.bz2"
-
-#####################################################################
-# for executing setup.py, a cross compliation need a native python first
-cd $ROOT/$PYTHONDIR
-./configure --prefix=$BUILD_PATH/macosx $PYFEATURES $OPTIONAL
-make && make install
-if [ 0 != $? ]; then
-    echo "Making native error, exiting ..."
-    exit 1
-fi
-cp Parser/pgen $BUILD_PATH/macosx/bin
-make clean
-cd $ROOT
-
 PYTHON_FOR_BUILD=$BUILD_PATH/macosx/bin/python
 PGEN_FOR_BUILD=$BUILD_PATH/macosx/bin/pgen
+
+## Due to modifications to multiple files in Python dir, we need a clean source base
+#if [ -d "$PYTHONDIR" ]; then
+#    echo "Cleaning $PYTHONDIR source ..."
+#    rm -rf "$PYTHONDIR" 
+#fi
+
+if [ ! -d "$PYTHONDIR" ]; then
+    if [ ! -f "Python-$PYTHONVER.tar.bz2" ]; then
+        wget -c "http://python.org/ftp/python/$PYTHONVER/Python-$PYTHONVER.tar.bz2"
+    fi
+    echo "Extracting Python-$PYTHONVER.tar.bz2"
+    tar xf "Python-$PYTHONVER.tar.bz2"
+fi
+    
+# ###################################
+# build native machine version of Python
+if [ ! -e "$PYTHON_FOR_BUILD" ]; then
+    if [ -d $BUILD_PATH ]; then
+        echo "Cleaning build directory ..."
+        rm -rf "$BUILD_PATH/*"
+    else
+        mkdir -p "$BUILD_PATH"
+    fi
+
+    #####################################################################
+    # for executing setup.py, a cross compliation need a native python first
+    cd $ROOT/$PYTHONDIR
+    ./configure --prefix=$BUILD_PATH/macosx $PYFEATURES $OPTIONAL
+    make && make install
+    if [ 0 != $? ]; then
+        echo "Making native error, exiting ..."
+        exit 1
+    fi
+    cp Parser/pgen $BUILD_PATH/macosx/bin
+    make clean
+fi
+# #################################
+# end build for native
+
+
+cd $ROOT
 
 ####################################################################
 echo "patching configure and Makefile ..."
@@ -100,7 +108,12 @@ do
     echo ""
     echo "building arch: $ARCH ..."
     echo ""
-    
+
+    if [ -d "$BUILD_PATH/$ARCH" ]; then
+        echo "cleaning old builds .."
+        rm -rf "$BUILD_PATH/$ARCH"
+    fi
+
     source ./environment.sh
 
     cd "$ROOT/$PYTHONDIR"
@@ -156,6 +169,7 @@ if [ 0 != $? ]; then
     exit 1
 fi
 
+cd $BUILD_PATH
 echo "Combing multi-arch modules  ..."
 MODULE_H="universal/modules/pythonmodules.h"
 echo "#include <Python.h>\n" > $MODULE_H
@@ -163,9 +177,28 @@ echo "#include <Python.h>\n" > $MODULE_H
 for a in ${ARCHS[0]}/lib/python$PYTHON_MAJOR_VER/lib-dynload/*.a
 do
     a="`basename ${a}`"
+    
+    fn=""
     if [[ "$a" =~ lib(.+)module.a ]]; then
-        echo "adding init${BASH_REMATCH[1]}() definition into header"
-        echo "extern PyMODINIT_FUNC init${BASH_REMATCH[1]}(void);\n" >> $MODULE_H
+        mn=${BASH_REMATCH[1]}
+        case "$mn" in
+            "socket" )
+                fn="init_socket"
+                ;;
+            *)
+                fn="init$mn"
+                ;;
+        esac
+    else
+        case "$a" in
+            "liboperator.a")
+                fn="initoperator"        
+                ;;
+        esac
+    fi
+    if [ ! -z $fn ]; then
+        echo "adding $fn() definition into header"
+        echo "extern PyMODINIT_FUNC $fn(void);\n" >> $MODULE_H
     fi
     EXTENSIONS_FILES=""
     for ARCH in ${ARCHS[@]} 

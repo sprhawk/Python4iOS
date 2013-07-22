@@ -35,7 +35,7 @@ fi
 DEVELOPER="$XCODE/Platforms/$PLATFORM.platform/Developer"
 SDKROOT="$DEVELOPER/SDKs/$PLATFORM$SDKVERSION.sdk"
 export CC="$DEVELOPER/usr/bin/llvm-gcc"
-export CFLAGS+=" -D__DARWIN_ONLY_UNIX_CONFORMANCE -g -pipe -arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks -g -Wall "
+export CFLAGS+=" -D__DARWIN_64_BIT_INO_T=0 -D__DARWIN_ONLY_UNIX_CONFORMANCE -g -pipe -arch $ARCH -O2 -I$SDKROOT/usr/include -isysroot $SDKROOT -miphoneos-version-min=$IPHONEOS_MIN_VERSION  -F$SDKROOT/System/Library/Frameworks -g -Wall "
 export CPP="$CPP"
 export CPPFLAGS=$CFLAGS
 
