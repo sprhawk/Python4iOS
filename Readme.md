@@ -61,5 +61,9 @@ Known Issues
 6. Cannot suppress warning of "32-bit absolute address out of range"
 
 
+TODO:
+======
+Modules: PIL
+
 
 About how I build the scripts(in Chinese): http://blog.yang.me/2013/07/22/690/
