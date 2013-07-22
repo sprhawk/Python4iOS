@@ -1,6 +1,6 @@
---- setup.py	2013-07-21 23:16:34.000000000 +0800
-+++ setup.py.static	2013-07-21 23:12:54.000000000 +0800
-@@ -33,7 +33,8 @@
+--- setup.py	2013-05-12 11:32:54.000000000 +0800
++++ setup.py.static	2013-07-22 18:33:58.000000000 +0800
+@@ -33,14 +33,17 @@
  COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig.get_config_var("CONFIG_ARGS"))
  
  # This global variable is used to hold the list of modules to be disabled.
@@ -10,7 +10,17 @@
  
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if
-@@ -166,8 +167,13 @@
+     1) 'dir' is not already in 'dirlist'
+     2) 'dir' actually exists, and is a directory."""
+     if dir is not None and os.path.isdir(dir) and dir not in dirlist:
+-        dirlist.insert(0, dir)
++        # hack: will not insert at the front, to prevent from including wrong headers
++        #dirlist.insert(0, dir)
++        dirlist.append(dir)
+ 
+ def macosx_sdk_root():
+     """
+@@ -166,8 +169,13 @@
          missing = self.detect_modules()
  
          # Remove modules that are present on the disabled list
@@ -26,7 +36,7 @@
          # move ctypes to the end, it depends on other modules
          ext_map = dict((ext.name, i) for i, ext in enumerate(extensions))
          if "_ctypes" in ext_map:
-@@ -245,10 +251,27 @@
+@@ -245,10 +253,27 @@
          # compilers
          if compiler is not None:
              (ccshared,cflags) = sysconfig.get_config_vars('CCSHARED','CFLAGS')

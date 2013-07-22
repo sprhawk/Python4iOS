@@ -217,17 +217,17 @@ do
     fi
 done
 
-#ARCH=${ARCHS[0]}
-#echo "Copying lib files ..."
-#cp -v -r $ARCH/lib/python$PYTHON_MAJOR_VER universal/lib/
-#echo "Copying include headers ..."
-#cp -r $ARCH/include/python$PYTHON_MAJOR_VER universal/include/
-#echo "Removing .pyc files .."
-#find universal -iname "*.pyc" -exec rm -f {} \;
-#echo "Removing .py files .."
-#find universal -iname "*.py" -exec rm -f {} \;
-#echo "Removing lib-dynload ..."
-#rm -rf universal/lib/python$PYTHON_MAJOR_VER/lib-dynload
+ARCH=${ARCHS[0]}
+echo "Copying lib files ..."
+cp -v -r $ARCH/lib/python$PYTHON_MAJOR_VER universal/lib/
+echo "Copying include headers ..."
+cp -r $ARCH/include/python$PYTHON_MAJOR_VER universal/include/
+echo "Removing .pyc files .."
+find universal -iname "*.pyc" -exec rm -f {} \;
+echo "Removing .py files .."
+find universal -iname "*.py" -exec rm -f {} \;
+echo "Removing lib-dynload ..."
+rm -rf universal/lib/python$PYTHON_MAJOR_VER/lib-dynload
 
 cd $ROOT
 echo "Done."
